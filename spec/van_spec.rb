@@ -33,4 +33,16 @@ describe Van do
 		expect(van.bike_count).to eq 2
 	end
 
+	it 'raises an error when overloaded from station' do
+		20.times {van.dock(Bike.new)}
+		expect {van.takes_broken_bikes_from(station)}.to raise_error(RuntimeError)
+	end
+
+	it 'raises an error when overloaded from garage' do
+		20.times {van.dock(Bike.new)}
+		expect {van.checkout_fixed_bikes_from(garage)}.to raise_error(RuntimeError)
+	end
+
+
+
 end

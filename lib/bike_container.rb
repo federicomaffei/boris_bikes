@@ -27,6 +27,8 @@ module BikeContainer
 		raise "The docking station is empty" if self.empty?
 		raise "No arguments passed to method" if bike == nil
 		bikes.delete(bike)
+		# can be replaced by pop, so no input arguments necessary
+		#bikes.pop
 	end
 
 	def full?
