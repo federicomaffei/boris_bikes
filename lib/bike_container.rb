@@ -19,13 +19,13 @@ module BikeContainer
 	end
 
 	def dock(bike)
-		raise "The docking station is full" if full?
+		raise FullContainerException.new if full?
 		bikes << bike
 	end
 
-	def release(bike)
-		raise "The docking station is empty" if self.empty?
-		raise "No arguments passed to method" if bike == nil
+	def release(bike = nil)
+		raise NoArgumentsError.new if bike.nil?
+		raise EmptyContainerException.new if self.empty?
 		bikes.delete(bike)
 		# can be replaced by pop, so no input arguments necessary
 		#bikes.pop
