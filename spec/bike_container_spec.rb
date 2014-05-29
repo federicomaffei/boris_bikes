@@ -24,6 +24,16 @@ describe BikeContainer do
 		expect(holder.bike_count).to eq 0
 	end
 
+	it 'should not release a bike if empty' do
+		holder.dock(bike)
+		holder.release(bike)
+		expect{holder.release(bike)}.to raise_error(RuntimeError)
+	end
+
+	it 'should not release a bike with no arguments passed' do
+		expect{holder.release()}.to raise_error(ArgumentError)
+	end
+
 	it 'should know when it is full' do
 		fill_station(holder)
 		expect(holder).to be_full
