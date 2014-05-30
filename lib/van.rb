@@ -9,7 +9,7 @@ class Van
 	end
 
 	def takes_broken_bikes_from(station)
-		raise "The van is full" if self.full?
+		raise FullContainerException.new if full?
 		station.broken_bikes.each do |broken_bike|
 			self.dock(broken_bike)
 			station.release(broken_bike)
@@ -17,7 +17,7 @@ class Van
 	end
 
 	def checkout_fixed_bikes_from(garage)
-		raise "The van is full" if self.full?
+		raise FullContainerException.new if full?
 		garage.available_bikes.each do |fixed_bike|
 			self.dock(fixed_bike)
 			garage.release(fixed_bike)
