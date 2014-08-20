@@ -20,15 +20,16 @@ module BikeContainer
 
 	def dock(bike)
 		raise FullContainerException.new if full?
-		bikes << bike
+		unless bikes.include? bike
+			bikes << bike
+		end
 	end
 
 	def release(bike = nil)
 		raise NoArgumentsError.new if bike.nil?
 		raise EmptyContainerException.new if self.empty?
 		bikes.delete(bike)
-		# can be replaced by pop, so no input arguments necessary
-		#bikes.pop
+		# bikes.pop - could be replaced by pop, so no input arguments necessary
 	end
 
 	def full?

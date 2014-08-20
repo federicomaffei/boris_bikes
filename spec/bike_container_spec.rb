@@ -25,6 +25,12 @@ describe BikeContainer do
 		expect(holder.bike_count).to eq 0
 	end
 
+	it 'should not accept the same bike twice' do
+		holder.dock(bike)
+		holder.dock(bike)
+		expect(holder.bike_count).to eq 1
+	end
+
 	it 'should not release a bike if empty' do
 		holder.dock(bike)
 		holder.release(bike)
