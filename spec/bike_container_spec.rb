@@ -31,6 +31,13 @@ describe BikeContainer do
 		expect(holder.bike_count).to eq 1
 	end
 
+	it 'should not accept an object which is not a bike' do
+		van = Van.new
+		holder.dock(bike)
+		holder.dock(van)
+		expect(holder.bike_count).to eq 1
+	end
+
 	it 'should not release a bike if empty' do
 		holder.dock(bike)
 		holder.release(bike)

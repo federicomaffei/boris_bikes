@@ -6,7 +6,7 @@ describe Garage do
 	let(:bike) {Bike.new}
 	let(:station) {DockingStation.new}
 
-	it 'sets a default capacity for a new van' do
+	it 'has a default capacity of 200' do
 		expect(garage.capacity).to eq 200
 	end
 

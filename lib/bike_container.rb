@@ -20,7 +20,7 @@ module BikeContainer
 
 	def dock(bike)
 		raise FullContainerException.new if full?
-		unless bikes.include? bike
+		unless bikes.include?(bike) || !bike.is_a?(Bike)
 			bikes << bike
 		end
 	end
