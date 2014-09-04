@@ -13,30 +13,29 @@ The domain model, as presented to us, can be described as so:
 > A van is used to move broken bikes from the stations to the garage. It can also be used to take fixed bikes back to the station(s). 
 > The van, all stations and the garage have fixed capacity, so they cannot take more bikes that they can hold.
 
-* The features I implemented via TDD are:
+##The features I implemented via TDD are:
 
-  1. A *Bike* object, that can be initialized, stored in a *DockingStation*, and has a method that returns its state (broken or fixed).
+1. A *Bike* object, that can be initialized, stored in a *DockingStation*, and has a method that returns its state (broken or fixed).
 
-  2. The creation of a *DockingStation* object, that can dock and release *Bikes*, returning information about *Bikes* availability and state.
+2. The creation of a *DockingStation* object, that can dock and release *Bikes*, returning information about *Bikes* availability and state.
 
-  3. The creation of a *Van* object, that can take broken *Bikes* from a *DockingStation* and take them to the *Garage*, to be fixed.
+3. The creation of a *Van* object, that can take broken *Bikes* from a *DockingStation* and take them to the *Garage*, to be fixed.
 
-  4. The creation of a *Garage* object, that can fix broken bikes.
+4. The creation of a *Garage* object, that can fix broken bikes.
 
-  5. The [encapsulation](http://en.wikipedia.org/wiki/Encapsulation_\(object-oriented_programming\)) of the functionalities that were common to the DockingStation, Van and Garage objects, defining a BikeContainer module.
+5. The [encapsulation](http://en.wikipedia.org/wiki/Encapsulation_\(object-oriented_programming\)) of the functionalities that were common to the DockingStation, Van and Garage objects, defining a BikeContainer module.
 
-* The programming languages and technologies I used are:
+###The programming languages and technologies I used are:
 
-  * Ruby
+* Ruby
 
-  * Rspec
+* Rspec
 
-* How to test the application:
+###How to test the application:
 
-  * From command line enter:
+* From command line enter:
 ```bash
 git clone git@github.com:federicomaffei/My-Student-Directory.git
 cd My-Student-Directory
 rspec
 ```
-* Possible future adds to the features:
