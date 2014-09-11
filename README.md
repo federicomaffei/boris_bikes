@@ -35,7 +35,7 @@ The domain model, as presented to us, can be described as so:
 
 * From command line enter:
 ```bash
-git clone git@github.com:federicomaffei/My-Student-Directory.git
-cd My-Student-Directory
+git clone git@github.com:federicomaffei/boris_bikes.git
+cd boris_bikes
 rspec
 ```
